@@ -15,7 +15,7 @@ int main()
 
   printf("\nthe 10th element is %d\n", myArray[9]);
 
-  for (int i = 9; i >= position; i--)
+  for (int i = 10; i >= position; i--)
   {
     myArray[i] = myArray[i - 1];
   }
