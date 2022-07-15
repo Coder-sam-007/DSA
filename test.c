@@ -1,43 +1,34 @@
-// C Program to Insert an element
-// at a specific position in an Array
-
 #include <stdio.h>
-
 int main()
 {
-  int arr[100] = {0};
-  int i, x, pos, n = 10;
+  int myArr[12] = {5, 2, 3, 2, 4, 5, 2, 4, 2, 4, 5, 3};
 
-  // initial array of size 10
-  for (i = 0; i < 10; i++)
-    arr[i] = i + 1;
+  printf("my array is: ");
 
-  // print the original array
-  for (i = 0; i < n; i++)
-    printf("%d ", arr[i]);
+  for (int i = 0; i < 12; i++)
+  {
+    printf(" %d  ", myArr[i]);
+  }
+
   printf("\n");
 
-  // element to be inserted
-  x = 50;
+  int count[12] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, i, j;
 
-  // position at which element
-  // is to be inserted
-  pos = 5;
+  for (i = 0; i < 12; i++)
+  {
+    int ab = myArr[i];
+    for (j = 0; j < 12; j++)
+    {
+      if (myArr[j] == ab)
+      {
+        count[j]++;
+      }
+    }
+    int countValue = count[j];
+    printf("%d ", countValue);
 
-  // increase the size by 1
-  n++;
-
-  // shift elements forward
-  for (i = n - 1; i >= pos; i--)
-    arr[i] = arr[i - 1];
-
-  // insert x at pos
-  arr[pos - 1] = x;
-
-  // print the updated array
-  for (i = 0; i < n; i++)
-    printf("%d ", arr[i]);
-  printf("\n");
+    printf("The element %d is repeated %d times\n", myArr[i], countValue);
+  }
 
   return 0;
 }
