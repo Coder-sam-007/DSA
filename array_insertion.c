@@ -1,31 +1,36 @@
 #include <stdio.h>
-#include <stdlib.h>
-
-int main()
+void display(int arr[], int size)
 {
-  int myArray[11] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-
-  for (int i = 0; i < 10; i++)
+  for (int i = 0; i < size; i++)
   {
-    printf("%d  ", myArray[i]);
+    printf("%d ", arr[i]);
+  }
+}
+
+void insert(int arr[], int size, int element, int position)
+{
+  for (int i = size; i >= position; i--)
+  {
+    arr[i] = arr[i - 1];
   }
 
-  int x = 50;
+  arr[position - 1] = element;
+}
+int main()
+
+{
+  int arr[11] = {1, 2, 3, 4, 6, 7, 8, 9, 10, 11};
+
+  int size = 10;
+  printf("The array is :\n");
+  display(arr, size);
+
+  int element = 5;
   int position = 5;
 
-  printf("\nthe 10th element is %d\n", myArray[9]);
-
-  for (int i = 10; i >= position; i--)
-  {
-    myArray[i] = myArray[i - 1];
-  }
-
-  myArray[position - 1] = x;
-
-  for (int i = 0; i < 11; i++)
-  {
-    printf("%d  ", myArray[i]);
-  }
+  insert(arr, size, element, position);
+  printf("\nAfter Insertion the array is: \n");
+  display(arr, size + 1);
 
   return 0;
 }
