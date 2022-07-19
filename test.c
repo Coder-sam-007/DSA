@@ -1,33 +1,32 @@
 #include <stdio.h>
 int main()
 {
-  int myArr[12] = {5, 2, 3, 2, 4, 5, 2, 4, 2, 4, 5, 3};
 
-  printf("my array is: ");
+  int myArr[10] = {1, 2, 5, 4, 3, 3, 4, 5, 1, 2};
 
-  for (int i = 0; i < 12; i++)
+  printf("Your array is:\n");
+
+  for (int i = 0; i < 10; i++)
   {
-    printf(" %d  ", myArr[i]);
+    printf("%d ", myArr[i]);
   }
 
-  printf("\n");
+  printf("\n\nIn the above array the repeated elements are:\n\n");
 
-  int count[12] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, i, j;
+  int count = 0, k;
 
-  for (i = 0; i < 12; i++)
+  for (int j = 0; j < 10; j++)
   {
-    int ab = myArr[i];
-    for (j = 0; j < 12; j++)
+    for (k = 0; k < 10; k++)
     {
-      if (myArr[j] == ab)
+      if (myArr[j] == myArr[k])
       {
-        count[j]++;
+        count++;
       }
     }
-    int countValue = count[j];
-    printf("%d ", countValue);
 
-    printf("The element %d is repeated %d times\n", myArr[i], countValue);
+    printf(" the element %d is repeated %d times\n", myArr[j], count);
+    count = 0;
   }
 
   return 0;

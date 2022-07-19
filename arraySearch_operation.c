@@ -1,29 +1,29 @@
 #include <stdio.h>
 int main()
 {
-  int myArray[10] = {9, 8, 3, 4, 7, 6, 5, 2, 8, 10};
-
-  printf("\n\n My array is: \n");
-
+  int p = 0, n;
+  int a[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+  printf("the given array is \n");
   for (int i = 0; i < 10; i++)
   {
-    printf("%d ", myArray[i]);
+    printf("%d ", a[i]);
   }
-
-  int searchValue;
-  printf("\nEnter a value to search it inside the array and find it's postion: \n");
-  scanf("%d", &searchValue);
-
+  printf("\n enter the no you want to search in the array");
+  scanf("%d", &n);
   for (int i = 0; i < 10; i++)
   {
-    if (myArray[i] == searchValue)
+    if (n == a[i])
     {
-      printf("we found your element (%d) at %dth position\n", myArray[i], i + 1);
+      p = i + 1;
     }
-    else
-      printf("\nYou must Provide an element which is present in the array");
-    break;
   }
-
+  if (p != 0)
+  {
+    printf("the given no %d is present in the position %d", n, p);
+  }
+  else
+  {
+    printf("the given no is not present in the given array");
+  }
   return 0;
 }
