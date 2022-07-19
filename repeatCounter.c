@@ -1,30 +1,35 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 int main()
 {
-    int myArr[12] = {1, 2, 3, 2, 4, 5, 2, 4, 2, 4, 5, 3};
 
-    printf("my array is: ");
+    int myArr[10] = {1, 2, 5, 4, 3, 3, 4, 5, 1, 2};
 
-    for (int i = 0; i < 12; i++)
+    printf("Your array is:\n");
+
+    for (int i = 0; i < 10; i++)
     {
-        printf(" %d  ", myArr[i]);
+        printf("%d ", myArr[i]);
     }
-    int num;
 
-    printf("\n\nEnter the number you want to check the repeatation of: ");
-    scanf("%d", &num);
+    printf("\n\nIn the above array the repeated elements are:\n\n");
 
-    int count = 0;
+    int count = 0, k;
 
-    for (int i = 0; i < 12; i++)
+    for (int j = 0; j < 10; j++)
     {
-        if (myArr[i] == num)
+        for (k = 0; k < 10; k++)
         {
-            count++;
+            if (myArr[j] == myArr[k])
+            {
+                count++;
+            }
         }
-    }
 
-    printf("\nIn the above array %d is repeated %d times", num, count);
+        printf(" the element %d is repeated %d times\n", myArr[j], count);
+        count = 0;
+    }
 
     return 0;
 }
