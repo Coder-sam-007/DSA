@@ -1,29 +1,44 @@
 #include <stdio.h>
-int main()
+
+void display(int arr[], int size)
 {
-  int p = 0, n;
-  int a[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-  printf("the given array is \n");
-  for (int i = 0; i < 10; i++)
+  for (int i = 0; i < size; i++)
   {
-    printf("%d ", a[i]);
+    printf("%d ", arr[i]);
   }
-  printf("\n enter the no you want to search in the array");
-  scanf("%d", &n);
-  for (int i = 0; i < 10; i++)
+}
+
+int arraySearch(int arr[], int size, int element)
+{
+  int position = 0;
+  for (int i = 0; i < size; i++)
   {
-    if (n == a[i])
+    if (arr[i] == element)
     {
-      p = i + 1;
+      position = i + 1;
     }
   }
-  if (p != 0)
-  {
-    printf("the given no %d is present in the position %d", n, p);
-  }
+
+  return position;
+}
+
+int main()
+{
+  int arr[10] = {12, 354, 1, 45, 67, 89, 90, 128, 85, 17};
+  int size = sizeof(arr) / sizeof(arr[0]);
+  printf("The array is :\n");
+  display(arr, size);
+
+  int element, position;
+  printf("\n\nEnter the element you want to search in this array: ");
+  scanf("%d", &element);
+
+  int index = arraySearch(arr, size, element);
+
+  if (index != 0)
+    printf("\nYour given element %d found in the array at position %d.", element, index);
   else
-  {
-    printf("the given no is not present in the given array");
-  }
+    printf("You have entered an element which is not present in the array.");
+
   return 0;
 }
