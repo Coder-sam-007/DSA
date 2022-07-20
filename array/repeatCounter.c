@@ -5,6 +5,7 @@ int main()
 {
 
     int myArr[10] = {1, 2, 5, 4, 3, 3, 4, 5, 1, 2};
+    int Count[10];
 
     printf("Your array is:\n");
 
@@ -26,7 +27,6 @@ int main()
                 count++;
             }
         }
-
         printf(" the element %d is repeated %d times\n", myArr[j], count);
         count = 0;
     }
